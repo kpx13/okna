@@ -18,7 +18,7 @@ class Category(MPTTModel):
     def save(self, *args, **kwargs):
         if not self.slug:
             if self.parent:
-                self.slug = self.parent.slug + '-' + pytils.translit.slugify(self.name)
+                self.slug = pytils.translit.slugify(self.name) + '_' + str(self.parent.id)
             else:
                 self.slug = pytils.translit.slugify(self.name)
         super(Category, self).save(*args, **kwargs)
@@ -68,7 +68,7 @@ class Item(models.Model):
     name = models.CharField(max_length=512, blank=True, verbose_name=u'название')
     art = models.CharField(max_length=50, verbose_name=u'артикул')
     price = models.FloatField(verbose_name=u'цена')   
-    desc = models.TextField(verbose_name=u'описание')
+    desc = RichTextField(verbose_name=u'описание')
     desc_full = RichTextField(blank=True, default=u'', verbose_name=u'описание дополнительное', help_text= u'(рядом с ценой)')
     image = models.ImageField(upload_to=lambda instance, filename: 'uploads/items/' + pytils.translit.translify(filename),
                               max_length=510, blank=True, verbose_name=u'изображение')
@@ -117,7 +117,7 @@ class Item(models.Model):
         verbose_name = u'товар'
         verbose_name_plural = u'товары'
         ordering=['order']
-        app_label = string_with_title("items", u"Товары")
+        app_label = string_with_title("catalog", u"Каталог")
         
     def __unicode__(self):
         return self.name

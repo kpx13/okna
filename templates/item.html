@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}</title>
+
+{% block content %}
+    <section class="catalog-view">
+        <div class="breadcrumbs" style='padding-top: 20px'>
+            <a href="/">Главная</a> - 
+            {% if category %}
+                <a href="/category/">Каталог</a> - 
+            {% endif %}
+            {% for p in category.breadcrumb %}
+                <a href="/category/{{ p.slug }}/">{{ p.name }}</a> - 
+            {% endfor %}
+            {{ item.name }}
+        </div>
+        
+        <h2>{{ item.name }}</h2>
+
+        <div class="catalog-view__img"><img src="/media/{{ item.image }}" alt="{{ item.name }}"/></div>
+        <div class="catalog-view__content">
+            {{ item.desc|safe }}
+
+            <div class="catalog-view__info">
+                <div class="catalog-view__price">{{ item.price|floatformat:"0" }} руб.</div>
+            </div>
+            {{ item.desc_full|safe }}
+        </div>
+    </section>
+{% endblock %}

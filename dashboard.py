@@ -55,10 +55,10 @@ class CustomIndexDashboard(Dashboard):
         
         self.children.append(
             modules.ModelList(
-                title = u'Заявки',
+                title = u'Каталог',
                 models=(
-                    'staffform.models.Staff',
-                    'resumeform.models.Resume',
+                    'catalog.models.Category',
+                    'catalog.models.Item',
                 ),
             )
         )

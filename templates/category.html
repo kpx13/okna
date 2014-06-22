@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}{{ title }}{% endblock %}</title>
+
+{% block content %}
+    <section class="catalog">
+        <h2>Каталог железных дверей</h2>
+
+        <div class="breadcrumbs" style='padding-top: 20px'>
+            <a href="/">Главная</a> - 
+            {% if category %}
+                <a href="/category/">Каталог</a> - 
+            {% endif %}
+            {% for p in category.breadcrumb %}
+                <a href="/category/{{ p.slug }}/">{{ p.name }}</a> - 
+            {% endfor %}
+            {{ title }}
+        </div>
+        
+        <div class="content">
+            <nav class="sidebar">
+                
+                {% for c in subcategories %}
+                    <a href="/category/{{ c.slug }}/">{{ c.name }}</a>
+                {% endfor %}
+
+            </nav>
+            <div class="page-wrp">
+                <section class="page">
+                
+                    {% for i in items %}
+                        <div class="catalog__item">
+                            {% thumbnail i.image "x200" as im %}
+                                <a href="/item/{{ i.slug }}/"><img src="{{ im.url }}" alt="{{ i.name }}" /></a>
+                            {% endthumbnail %}
+                            <a href="/item/{{ i.slug }}/" class="catalog__item__title">{{ i.name }}</a>
+                            <span class="catalog__item__price">{{ i.price|floatformat:"0" }} руб.</span>
+                        </div>
+                    {% empty %}
+                        <p>В этой категории нет товаров.</p>
+                    {% endfor %}
+
+                </section>
+                
+                {% if need_pagination %}
+                    <div style='clear: both'></div>
+                    <div class="pagination" style='text-align: center'>
+                        {% if items.has_previous %}
+                            <a href="{{ get_request }}?page={{ items.previous_page_number }}">&lt; Пред.</a>
+                        {% endif %}
+                        {% for p in page_range %}
+                            {% if p == items.number %}
+                                {{ p }}
+                            {% else %}
+                                <a href="{{ get_request }}?page={{ p }}">{{ p }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if items.has_next %}
+                            <a href="{{ get_request }}?page={{ items.next_page_number }}">След. &gt;</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+        
+            </div>
+            
+        </div>
+        
+        <ul class="page__nav"></ul>
+    </section>
+{% endblock %}
