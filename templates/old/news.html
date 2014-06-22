@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    
+    <div class="content">
+        <div class="breadcrumbs">
+            <a href="/">Главная </a>
+            <span>Новости</span>
+        </div>
+        
+        {% for n in news %}
+            <div class="content__block">
+                <p><b>{{ n.name }}</b></p>
+                <p>{{ n.text|removetags:"p span img"|truncatechars:510 }}</p>
+                <i class='news-date'>{{ n.date }}</i><br />
+                <a href='/news/{{ n.slug }}/'>Подробнее >></a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

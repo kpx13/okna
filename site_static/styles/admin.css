@@ -1,0 +1,32 @@
+body
+{
+}
+
+.dashboard-title{
+    display: none;
+}
+
+#header #branding h1 {
+    margin: 0;
+    padding: 5px 0px;
+    text-indent: -9999px;
+    background: #fff url(/static/img/logo.jpg) 5px 5px no-repeat;
+    height: 55px;
+    border-bottom: 1px solid lightgray;
+}
+
+#header, #header a
+{
+    color: #222 !important;
+}
+
+.grp-horizontal-list
+{
+}
+
+.grp-horizontal-list ul li
+{
+    list-style: none;
+    
+    
+}
