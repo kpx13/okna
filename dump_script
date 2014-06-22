@@ -1,1 +1,1 @@
-python manage.py dumpdata news pages slideshow > dump____.json
+python manage.py dumpdata news pages slideshow catalog > dump____.json

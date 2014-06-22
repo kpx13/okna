@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <section class="catalog-view">
+        <div class="breadcrumbs" style='padding-top: 20px'><a href="/">Главная</a> - Новости</div>
+        <h2>Новости</h2>
+        <div class="catalog-view__content">
+            {% for n in news %}
+                <p>
+                    <b>{{ n.name }}</b>
+                    <a class="btn-more" href="/news/{{ n.slug }}/"> подробнее...</a>
+                </p>
+                <p>
+                    {{ n.text|removetags:"p span img"|truncatechars:510 }}<br />
+                    <i style='color: #007; font-size: small'>{{ n.date }}</i>
+                </p>
+                
+                <div style='clear:both; padding-top: 30px;'>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

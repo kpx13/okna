@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ p.title }}{% endblock %}
+
+{% block content %}
+    <section class="catalog-view">
+        <div class="breadcrumbs" style='padding-top: 20px'><a href="/">Главная</a> - {{ p.title }}</div>
+        <h2>{{ p.title }}</h2>
+        <div class="catalog-view__content">
+            {{ p.content|safe }}
+        </div>
+    </section>
+{% endblock %}

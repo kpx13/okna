@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Окна КВАРТАЛ | {% block title %}{% endblock %}</title>
+    <meta charset="utf-8"/>
+    <!--[if lt IE 9]>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/script.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <a class="header__logo" href="/"></a>
+        <nav class="header__nav">
+            <a class="active" href="/catalog/">Каталог</a>
+            <a href="/o-kompanii/">О компании</a>
+            <a href="/news/">Новости</a>
+            <a href="/nashi-tsenyi/">Наши цены</a>
+            <a href="/kontaktyi/">Контакты</a>
+
+            <div class="header__nav__hover"></div>
+        </nav>
+        <div class="header__search">
+            <input type="search" placeholder="Поиск"/>
+            <button class="header__search__icon"></button>
+        </div>
+    </header>
+    {% block wrapper %}
+        <div class="banner-wrp">
+            <div class="banner">
+                <div class="banner__heading"> Мы это:</div>
+                <div class="banner__block _1">Экономия ваших денежных средств</div>
+                <div class="banner__block _2">Лучшее качество нашей продукции</div>
+                <div class="banner__block _3">Быстрая и бесплатная доставка</div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="page__inner">
+                {% block content %}
+                {% endblock %}
+                
+                <section class="offers _blue">
+                    <div class="offers__block _1">
+                        <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                        <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                            профиль REHAU. </p> <a href="#" class="more">Подробнее...</a>
+                    </div>
+                    <div class="offers__block _2">
+                        <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                        <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                            профиль REHAU. </p> <a href="#" class="more">Подробнее...</a>
+                    </div>
+                    <div class="offers__block _3">
+                        <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                        <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                            профиль REHAU.</p>   <a href="#" class="more">Подробнее...</a>
+                    </div>
+                    <div class="offers__block _4">
+                        <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                        <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                            профиль REHAU.</p> <a href="#" class="more">Подробнее...</a>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    {% endblock %}
+</div>
+<footer class="footer-wrp">
+    <div class="footer">
+        <a class="footer__logo" href="/"></a>
+
+        <div class="footer__block">
+            Талдом:<br/>+7 (495) 221-84-32
+        </div>
+        <div class="footer__block">
+            Дмитров:<br/>+7 (929) 60-01
+        </div>
+        <div class="footer__block">
+            Мытищи:<br/>+7 (498) 301-59-00
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

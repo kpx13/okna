@@ -20,7 +20,7 @@ def get_common_context(request):
     c = {}
     c['request_url'] = request.path
     c['is_debug'] = settings.DEBUG
-    c['news_recent'] = NewsItem.objects.all()[0:3]
+    c['news_recent'] = NewsItem.objects.all()[0:4]
     c.update(csrf(request))
     return c
 

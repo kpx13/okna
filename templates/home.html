@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block wrapper %}
+
+    <div class="header__slider-wrp">
+        <div class="header__slider">
+            {% for s in slider %}
+                <div class="header__slide {% if forloop.first %}active{% endif %}">
+                    <img src="/media/{{ s.image }}"/>
+                    <div class="header__slide__in">
+                        <h2 class="header__slide__in__title">{{ s.title }}</h2>
+
+                        <p class="header__slide__title_sub">{{ s.text }}</p>
+                        {% if s.link %}
+                            <a href="{{ s.link }}" class="header__slide__btn btn-blue">Читать подробнее</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <ul class="header__slider__nav"></ul>
+    </div>
+    
+    <div class="container">
+        <section class="offers">
+            <div class="offers__title"><span>Мы предлагаем</span></div>
+            <div class="offers__block _1">
+                <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                    профиль REHAU. </p> <a href="#" class="more">Подробнее...</a>
+            </div>
+            <div class="offers__block _2">
+                <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                    профиль REHAU. </p> <a href="#" class="more">Подробнее...</a>
+            </div>
+            <div class="offers__block _3">
+                <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                    профиль REHAU.</p>   <a href="#" class="more">Подробнее...</a>
+            </div>
+            <div class="offers__block _4">
+                <h3 class="offers__block__title">Пластиковые окна</h3>
+
+                <p>Мы готовы предложить Вам окна известного брэнда REHAU - Basic-Design и Delight-Design. Выбирая
+                    профиль REHAU.</p> <a href="#" class="more">Подробнее...</a>
+            </div>
+        </section>
+        <section class="block-about">
+            <h1 class="block-about__heading">Оконная компания "Квартал"</h1>
+
+            <div class="block-about__in">
+                <div class="block-about__title">Здравствуйте, уважаемый Посетитель!</div>
+                {{ p.content|safe }}
+                <div class="block-about__subscribe">С уважением, <br/>
+                    Оконная компания "Квартал"
+                </div>
+
+            </div>
+            <a class="block-about__prices" href="#">
+                <div class="block-about__prices__title"> Наши цены</div>
+                <p>На данной странице вы можете ознакомится с нашими ценами</p>
+
+            </a>
+        </section>
+
+
+        <section class="promo">
+            <h3>Акции и скидки</h3>
+            {% for n in news_recent %}
+                <div class="promo__block">
+                    <div class="promo__block__title">{{ n.name }}</div>
+                    <p>{{ n.text|removetags:"p span img"|truncatechars:210 }}</p> 
+                    <a class="btn-more" href="/news/{{ n.slug }}/"> подробнее...</a>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+
+{% endblock %}
+
+
+            
