@@ -15,11 +15,11 @@
     <header class="header">
         <a class="header__logo" href="/"></a>
         <nav class="header__nav">
-            <a {% if 'category' in request_url %} class="active"{% endif %} href="/category/">Каталог</a>
-            <a {% if 'gallery' in request_url %} class="active"{% endif %} href="/gallery/">Галерея</a>
-            <a {% if 'news' in request_url %} class="active"{% endif %} href="/news/">Новости</a>
+	    <a {% if 'news' in request_url %} class="active"{% endif %} href="/news/">Новости</a>
+            <a {% if 'category' in request_url %} class="active"{% endif %} href="/category/">Продукция</a>
+	    <a {% if 'nashi-tsenyi' in request_url %} class="active"{% endif %} href="/nashi-tsenyi/">Наши цены</a>
+            <a {% if 'stati' in request_url %} class="active"{% endif %} href="/stati/">Статьи</a>
             <a {% if 'o-kompanii' in request_url %} class="active"{% endif %} href="/o-kompanii/">О компании</a>
-            <a {% if 'nashi-tsenyi' in request_url %} class="active"{% endif %} href="/nashi-tsenyi/">Наши цены</a>
             <a {% if 'kontaktyi' in request_url %} class="active"{% endif %} href="/kontaktyi/">Контакты</a>
             
 

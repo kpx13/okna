@@ -12,7 +12,7 @@ class Category(MPTTModel):
     name = models.CharField(max_length=50, verbose_name=u'название')
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', verbose_name=u'родительская категория')
     order = models.IntegerField(null=True, blank=True, verbose_name=u'порядок сортировки')
-    slug = models.SlugField(max_length=128, verbose_name=u'слаг', unique=True, blank=True, help_text=u'заполнять не нужно')
+    slug = models.SlugField(max_length=128, verbose_name=u'url', unique=True, blank=True, help_text=u'заполнять не нужно')
     
     
     def save(self, *args, **kwargs):

@@ -7,7 +7,7 @@ from dashboard import string_with_title
 class Page(models.Model):
     title = models.CharField(max_length=256, verbose_name=u'заголовок')
     content = RichTextField(blank=True, verbose_name=u'контент')
-    slug = models.SlugField(verbose_name=u'слаг', unique=True, blank=True, help_text=u'Заполнять не нужно')
+    slug = models.SlugField(verbose_name=u'url', unique=True, blank=True, help_text=u'Заполнять не нужно')
     
     def save(self, *args, **kwargs):
         if not self.slug:

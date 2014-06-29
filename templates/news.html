@@ -10,13 +10,12 @@
             {% for n in news %}
                 <p>
                     <b>{{ n.name }}</b>
-                    <a class="btn-more" href="/news/{{ n.slug }}/"> подробнее...</a>
                 </p>
                 <p>
                     {{ n.text|removetags:"p span img"|truncatechars:510 }}<br />
                     <i style='color: #007; font-size: small'>{{ n.date }}</i>
                 </p>
-                
+		<a class="btn-more" href="/news/{{ n.slug }}/"> подробнее...</a>                
                 <div style='clear:both; padding-top: 30px;'>
             {% endfor %}
         </div>
