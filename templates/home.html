@@ -3,27 +3,8 @@
 {% block title %}Главная{% endblock %}
 
 {% block wrapper %}
-
-    <div class="header__slider-wrp">
-        <div class="header__slider">
-            {% for s in slider %}
-                <div class="header__slide {% if forloop.first %}active{% endif %}">
-                    <img src="/media/{{ s.image }}"/>
-                    <div class="header__slide__in">
-                        <h2 class="header__slide__in__title">{{ s.title }}</h2>
-
-                        <p class="header__slide__title_sub">{{ s.text }}</p>
-                        {% if s.link %}
-                            <a href="{{ s.link }}" class="header__slide__btn btn-blue">Читать подробнее</a>
-                        {% endif %}
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <ul class="header__slider__nav"></ul>
-    </div>
-    
     <div class="container">
+        <div style='height: 30px;'></div>
         <section class="offers">
             <div class="offers__title"><span>Мы предлагаем</span></div>
             <div class="offers__block _1">
@@ -51,6 +32,29 @@
                     профиль REHAU.</p> <a href="#" class="more">Подробнее...</a>
             </div>
         </section>
+    </div>
+
+    <div class="header__slider-wrp">
+        <div class="header__slider">
+            {% for s in slider %}
+                <div class="header__slide {% if forloop.first %}active{% endif %}">
+                    <img src="/media/{{ s.image }}"/>
+                    <div class="header__slide__in">
+                        <h2 class="header__slide__in__title">{{ s.title }}</h2>
+
+                        <p class="header__slide__title_sub">{{ s.text }}</p>
+                        {% if s.link %}
+                            <a href="{{ s.link }}" class="header__slide__btn btn-blue">Читать подробнее</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <ul class="header__slider__nav"></ul>
+    </div>
+    
+    <div class="container">
+        <div style='height: 30px;'></div>
         <section class="block-about">
             <h1 class="block-about__heading">Оконная компания "Квартал"</h1>
 
