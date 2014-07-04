@@ -477,7 +477,7 @@ h3{
 }
 
 .footer-wrp {
-    height: 50px;
+    height: 100px;
     background: #2e3e4f;
     margin-top: -50px;
     font-size: 14px;
@@ -658,7 +658,7 @@ h3{
     margin-left: 32px;
     min-height: 70px;
     float: right;
-    font-size: 15px;
+    font-size: 19px;
     line-height: 16px;
     color: #fff;
     width: 180px;
@@ -670,7 +670,25 @@ h3{
     background-repeat: no-repeat;
     margin-top: 15px;
     padding-top: 10px;
-    background-position: -420px 0;
+    background-position: 0 0;
+    
+}
+
+.banner_new{
+    padding-left: 0px;
+    margin-left: 32px;
+    min-height: 70px;
+    width: 270px;
+    text-align:center;
+    float: left;
+    font-size: 19px;
+    line-height: 19px;
+    color: #fff;
+    font-family: 'Myriad-Pro';
+    margin-top: 7px;
+    padding-top: 7px;
+    font-size: large;
+    font-weight: bold;
 }
 
 .banner__block._2 {
@@ -678,7 +696,7 @@ h3{
 }
 
 .banner__block._3 {
-    background-position: 0 0;
+    background-position: -420px 0;
 }
 
 .offers._blue {
