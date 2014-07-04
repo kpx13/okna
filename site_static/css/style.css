@@ -312,7 +312,7 @@ body, html {
     display: inline-block;
     text-align: center;
     vertical-align: top;
-    padding-top: 175px;
+    padding-top: 135px;
     font-family: 'Myriad-Pro';
     font-size: 13px;
     margin: 0 13px;
@@ -325,8 +325,8 @@ body, html {
 
 .offers__block__title {
     font-family: 'Myriad-Pro-Bold';
-    font-size: 21px;
-    margin-bottom: 14px;
+    font-size: 27px;
+    margin-bottom: 4px;
     letter-spacing: 1px;
 }
 
