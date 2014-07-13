@@ -48,6 +48,7 @@ class CustomIndexDashboard(Dashboard):
                     'pages.models.Page',
                     'slideshow.models.Slider',
                     'news.models.NewsItem',
+                    'gallery.models.Photo',
                 ),
             )
         )

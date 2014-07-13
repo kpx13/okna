@@ -10,6 +10,7 @@ from pages.models import Page
 from slideshow.models import Slider
 from news.models import NewsItem
 from catalog.models import Category, Item
+from gallery.models import Photo
 
 import config
 from livesettings import config_value
@@ -45,6 +46,7 @@ def home(request):
 def gallery(request):
     c = get_common_context(request)
     c['title'] = u'Галерея'
+    c['gallery'] = Photo.objects.all()
     return render_to_response('gallery.html', c, context_instance=RequestContext(request))
 
 def news(request, slug=None):
