@@ -13,6 +13,12 @@ $(function () {
         slideNav.find("li").eq(0).addClass("active");
     }
 
+    
+    $(".gallery").each(function (index, v) {
+        $(this).find('.gal__item').colorbox({rel: 'gallery' + index });
+    });
+        
+    
 
     function rotate() {
         var parent = $(".header__slider-wrp"),

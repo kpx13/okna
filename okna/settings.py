@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     'slideshow',
     'news',
     'catalog',
+    'gallery',
 )
 
 
